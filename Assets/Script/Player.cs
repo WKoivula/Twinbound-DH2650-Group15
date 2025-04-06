@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void Movement(bool left, bool right)
+    public void Movement(bool left, bool right,bool jump)
     {
         float move = 0f;
         if (left) move = -1f;
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 
         rb.linearVelocity = new Vector2(move * moveSpeed, rb.linearVelocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        if (jump&& isGrounded())
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }

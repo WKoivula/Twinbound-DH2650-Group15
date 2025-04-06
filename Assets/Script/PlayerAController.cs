@@ -5,6 +5,6 @@ public class PlayerAController : Player
 
     void Update()
     {
-        Movement(Input.GetKey(KeyCode.A), Input.GetKey(KeyCode.D));
+        Movement(Input.GetKey(KeyCode.A), Input.GetKey(KeyCode.D),Input.GetKey(KeyCode.UpArrow));
     }
 }
