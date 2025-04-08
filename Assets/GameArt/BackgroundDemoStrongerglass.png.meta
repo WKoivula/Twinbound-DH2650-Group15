@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BackgroundDemoStrongerglass_0: -1683890197302925816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
