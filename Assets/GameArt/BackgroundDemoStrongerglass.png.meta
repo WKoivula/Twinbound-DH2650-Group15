@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c0bc13483ccbbe94795655962d14e8c7
+guid: c1d94027896acf4409630a1a8df46df3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4692307121374937864
-    second: Ground_right 1_0
+      213: -1683890197302925816
+    second: BackgroundDemoStrongerglass_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ground_right 1_0
+      name: BackgroundDemoStrongerglass_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 17
-        width: 1453
-        height: 423
+        x: 0
+        y: 0
+        width: 1920
+        height: 3000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 803c69a477c6e1140800000000000000
-      internalID: 4692307121374937864
+      spriteID: 8062ff489ce91a8e0800000000000000
+      internalID: -1683890197302925816
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Ground_right 1_0: 4692307121374937864
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
