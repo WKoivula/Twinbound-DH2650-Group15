@@ -1,18 +1,30 @@
-using UnityEngine;
+    using UnityEngine;
 
-public class ButtonTrigger : MonoBehaviour
-{
-    public Collider2D gateCollider; // Assign the collider (e.g. BoxCollider2D) of the gate in Inspector
-
-    void OnTriggerEnter2D(Collider2D other)
+    public class ButtonTrigger : MonoBehaviour
     {
-        gateCollider.enabled = false; // Make gate passable
-        Debug.Log("false"); // ← 这里要用 Debug.Log() 而不是 console()
+        public Collider platformCollider;
+        private Renderer platformRenderer; 
+    
+        void Start()
+        {
+            platformRenderer = platformCollider.GetComponent<Renderer>();
+
+            // Hide platform at start
+            platformCollider.enabled = false;
+            platformRenderer.enabled = false;
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        gateCollider.enabled = true; // Make gate block again
-        Debug.Log("true"); // ← 同上
+        void OnTriggerEnter(Collider other)
+        {
+            platformCollider.enabled = true;
+            platformRenderer.enabled = true;
+            Debug.Log("true"); // ← 这里要用 Debug.Log() 而不是 console()
+        }
+
+        void OnTriggerExit(Collider other)
+        {
+            platformCollider.enabled = false;
+            platformRenderer.enabled = false; 
+            Debug.Log("false"); // ← 同上
+        }
     }
-}
