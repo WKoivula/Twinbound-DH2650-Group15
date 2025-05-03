@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 412d278dc43726e41871546d3af18014
+guid: 800a45fa5e92c864eb748dc31b920767
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4191511602922700279
-    second: layer2_0
+      213: 5651457148976165539
+    second: laserEmitter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: layer2_0
+      name: laserEmitter_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9024ddb9762c4d5c0800000000000000
-      internalID: -4191511602922700279
+      spriteID: 3a2f01495520e6e40800000000000000
+      internalID: 5651457148976165539
       vertices: []
       indices: 
       edges: []
