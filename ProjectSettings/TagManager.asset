@@ -7,6 +7,7 @@ TagManager:
   - 'Ground '
   - Deadly
   - MovingPlatform
+  - Potion
   layers:
   - Default
   - TransparentFX
