@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private Transform playerB;
 
     private bool hasSwapped = false;
-    private float swapDuration = 10f;
+    private float swapInterval = 5f;
     private float timer = 0f;
 
     private void Awake()
@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public void TriggerSwap()
     {
         SwapPositions();
-        timer = swapDuration;
         hasSwapped = true;
     }
 
@@ -30,11 +29,12 @@ public class GameManager : MonoBehaviour
     {
         if (hasSwapped)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0f)
+            timer += Time.deltaTime;
+
+            if (timer >= swapInterval)
             {
-                SwapBack();
-                hasSwapped = false;
+                SwapPositions();
+                timer = 0f;
             }
         }
     }
@@ -44,11 +44,5 @@ public class GameManager : MonoBehaviour
         Vector3 tempPos = playerA.position;
         playerA.position = playerB.position;
         playerB.position = tempPos;
-    }
-    private void SwapBack()
-    {
-        Vector3 tempPosition = playerB.position;
-        playerB.position = playerA.position;
-        playerA.position = tempPosition;
     }
 }
