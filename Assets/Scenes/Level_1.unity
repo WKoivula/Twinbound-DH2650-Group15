@@ -896,12 +896,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcf5d7bc39f03c4d8ceca08a0831b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  jumpForce: 7
+  moveSpeed: 5
+  jumpForce: 11
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckDistance: 1
+  groundCheckDistance: 0.7
 --- !u!23 &427460884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5475,12 +5475,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ebc289a1d849c41be721cb9de9b1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  jumpForce: 7
+  moveSpeed: 5
+  jumpForce: 11
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckDistance: 1
+  groundCheckDistance: 0.7
 --- !u!23 &2052958500
 MeshRenderer:
   m_ObjectHideFlags: 0
