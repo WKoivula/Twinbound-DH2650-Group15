@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6432333511047734312}
   - component: {fileID: 5969618461148239996}
   - component: {fileID: 6129299232660684160}
+  - component: {fileID: -4555104359062681068}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -135,7 +136,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600670029346743685}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -345,6 +346,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4555104359062681068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600670029346743685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83736011934ce984598fd0d44316c565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7843811490748988449
 GameObject:
   m_ObjectHideFlags: 0
