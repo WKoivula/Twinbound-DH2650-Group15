@@ -11,7 +11,7 @@ public class LevelSelection : MonoBehaviour
     private void Start()
     {
         // Lock levels based on player progress
-        int levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 2);
+        int levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 3);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
