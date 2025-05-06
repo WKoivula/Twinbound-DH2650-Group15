@@ -11,8 +11,9 @@ public class PlayerAController : Player
         }
     }
 
-    void Update()
+    private void Update()
     {
-        Movement(Input.GetKey(KeyCode.A), Input.GetKey(KeyCode.D),Input.GetKeyDown(KeyCode.UpArrow));
+        Movement(KeyCode.A, KeyCode.D, KeyCode.UpArrow);
+        base.Update();
     }
 }

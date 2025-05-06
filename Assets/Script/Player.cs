@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private float footstepCooldown = 0.4f;
     private float lastFootstepTime = -1f;
 
+    private float fallMultiplier = 2.0f;
+
     protected Rigidbody rb;
 
     private void Start()
@@ -20,11 +22,11 @@ public class Player : MonoBehaviour
         footstepSound = GetComponents<AudioSource>()[1];
     }
 
-    public void Movement(bool left, bool right, bool jump)
+    public void Movement(KeyCode left, KeyCode right, KeyCode jump)
     {
         float move = 0f;
-        if (left) move = -1f;
-        if (right) move = 1f;
+        if (Input.GetKey(left)) move = -1f;
+        if (Input.GetKey(right)) move = 1f;
      
 
 
@@ -38,11 +40,24 @@ public class Player : MonoBehaviour
             lastFootstepTime = Time.time;
         }
 
-        if (jump && IsGrounded())
+        if (Input.GetKeyDown(jump) && IsGrounded())
         {
             jumpSound.Play();
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
         }
+
+        if (Input.GetKeyUp(jump) && rb.linearVelocity.y > 0)
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y / 2, rb.linearVelocity.z);
+        }
+    }
+
+    protected virtual void Update()
+    {
+        //if (rb.linearVelocity.y < 0)
+        //{
+        //    rb.linearVelocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        //}
     }
 
     public bool IsGrounded()
