@@ -1,77 +1,60 @@
 using UnityEngine;
 
-public class NozzleLaserController : MonoBehaviour
+/// <summary>
+/// 控制一个可以启停的激光喷嘴（继承自 BaseLaserController）
+/// 默认不发射激光，需调用 StartFiring() 来启用激光。
+/// </summary>
+public class NozzleLaserController : BaseLaserController
 {
-    public Transform nozzleOrigin;
-    public float maxDistance = 10f;
-    public LayerMask hitMask;
-
-    public GameObject startVFX; 
-    public GameObject endVFX;   
-
+    // 当前是否正在发射激光
     private bool isFiring = false;
-    private LineRenderer lr;
 
-    void Start()
+    // 初始化组件（调用基类初始化）
+    protected override void Start()
     {
-        lr = GetComponent<LineRenderer>();
-        lr.startWidth = 0.5f;
-        lr.endWidth = 0.5f;
+        base.Start();
 
-        if (startVFX != null) startVFX.SetActive(false);
-        if (endVFX != null) endVFX.SetActive(false);
+        // ⚠️ 可选：立即启动激光（测试用）
+        // StartFiring(); 
     }
 
+    // 每帧更新，只有当激光开启时才进行射线检测与渲染
     void Update()
     {
-        if (!isFiring) return;
+        if (!isFiring) return;        // 未开启激光则跳过
 
-        Vector3 origin = nozzleOrigin.position;
+        if (emitter == null) return;  // 没有发射器也无法发射
+
+        // 发射激光的起点与方向（默认向下）
+        Vector3 origin = emitter.position;
         Vector3 direction = Vector3.down;
 
-        RaycastHit hit;
-        Vector3 endPoint;
-
-        if (Physics.Raycast(origin, direction, out hit, maxDistance, hitMask))
-        {
-            endPoint = hit.point;
-        }
-        else
-        {
-            endPoint = origin + direction * maxDistance;
-        }
-
-        lr.SetPosition(0, origin);
-        lr.SetPosition(1, endPoint);
-
-        if (startVFX != null)
-        {
-            startVFX.SetActive(true);
-            startVFX.transform.position = origin;
-        }
-
-        if (endVFX != null)
-        {
-            endVFX.SetActive(true);
-            endVFX.transform.position = endPoint;
-        }
+        // 调用基类方法执行射线检测 + 渲染 + 平台响应
+        FireLaser(origin, direction);
     }
 
+    /// <summary>
+    /// 启动激光，打开 LineRenderer 和特效
+    /// </summary>
     public void StartFiring()
     {
         isFiring = true;
-        lr.enabled = true;
+        // 启用 LineRenderer 显示激光
+        if (lr != null) lr.enabled = true;
 
+        // 激活起点/终点特效
         if (startVFX != null) startVFX.SetActive(true);
         if (endVFX != null) endVFX.SetActive(true);
     }
 
+    /// <summary>
+    /// 停止激光，关闭渲染与命中平台效果
+    /// </summary>
     public void StopFiring()
     {
         isFiring = false;
-        lr.enabled = false;
 
-        if (startVFX != null) startVFX.SetActive(false);
-        if (endVFX != null) endVFX.SetActive(false);
+        // 调用基类关闭激光、特效、平台状态
+        StopLaser();
     }
 }

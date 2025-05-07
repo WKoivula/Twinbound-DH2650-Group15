@@ -24,12 +24,19 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         Time.timeScale = 1f; // Resume before loading
-        SceneManager.LoadScene("MainMenu"); // Make sure scene name matches
+        SceneManager.LoadScene("StartScreen"); // Make sure scene name matches
     }
 
     public void RestartLevel()
     {
         Time.timeScale = 1f; // Resume before restarting
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f; // Resume before restarting
+    }
+
+        public void PauseDirectly()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
