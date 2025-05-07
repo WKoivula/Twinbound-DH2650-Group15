@@ -13,7 +13,7 @@ public class LevelSelection : MonoBehaviour
     private void Start()
     {
         // Lock levels based on player progress
-        int levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 3);
+        int levelsUnlocked = PlayerPrefs.GetInt("levelsUnlocked", 4);
         menuclickSound = GetComponent<AudioSource>();
 
         for (int i = 0; i < levelButtons.Length; i++)
