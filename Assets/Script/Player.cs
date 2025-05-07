@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     private float fallMultiplier = 2.0f;
 
     protected Rigidbody rb;
+    public Animator animator;
+    public SpriteRenderer sprite;
+    private bool wasGrounded = false;
 
     private void Start()
     {
@@ -34,13 +37,15 @@ public class Player : MonoBehaviour
         velocity.x = move * moveSpeed;
         rb.linearVelocity = velocity;
 
-        if (IsGrounded() && move != 0f  && Time.time - lastFootstepTime >= footstepCooldown)
+        bool grounded = IsGrounded();
+
+        if (grounded && move != 0f  && Time.time - lastFootstepTime >= footstepCooldown)
         {
             PlayFootStep();
             lastFootstepTime = Time.time;
         }
 
-        if (Input.GetKeyDown(jump) && IsGrounded())
+        if (Input.GetKeyDown(jump) && grounded)
         {
             jumpSound.Play();
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
@@ -50,6 +55,15 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y / 2, rb.linearVelocity.z);
         }
+
+        sprite.flipX = !(rb.linearVelocity.x < 0f);
+
+        if (wasGrounded != grounded)
+        {
+            animator.SetBool("isJumping", !grounded);
+        }
+
+        wasGrounded = grounded;
     }
 
     protected virtual void Update()
@@ -58,6 +72,12 @@ public class Player : MonoBehaviour
         //{
         //    rb.linearVelocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         //}
+    }
+
+    private void FixedUpdate()
+    {
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
     public bool IsGrounded()
@@ -77,6 +97,11 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("test");
     }
 
     private void PlayFootStep()
