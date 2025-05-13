@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GroundedCheck : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
     public Player player;
 
     private void OnTriggerEnter(Collider other)
