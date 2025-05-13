@@ -3843,6 +3843,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1107738513091364722, guid: c4284a76eb981604996e258f7c9ce648, type: 3}
+    - target: {fileID: 7798326474026982433, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: m_Radius
+      value: 0.32227004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798326474026982433, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: m_Center.x
+      value: -0.03711641
+      objectReference: {fileID: 0}
     - target: {fileID: 8468104799167474691, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -4475,9 +4483,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.021002984
-  m_Height: 0.14927855
+  m_Height: 0.12354455
   m_Direction: 0
-  m_Center: {x: -0.007899857, y: -0.14100301, z: 0}
+  m_Center: {x: -0.008394742, y: -0.14100301, z: 0}
 --- !u!114 &1685628848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5330,9 +5338,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.021002984
-  m_Height: 0.14927855
+  m_Height: 0.12354455
   m_Direction: 0
-  m_Center: {x: -0.007899857, y: -0.14100301, z: 0}
+  m_Center: {x: -0.008394742, y: -0.14100301, z: 0}
 --- !u!1 &2123888796
 GameObject:
   m_ObjectHideFlags: 0

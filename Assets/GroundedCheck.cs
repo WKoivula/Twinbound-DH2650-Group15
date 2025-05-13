@@ -7,6 +7,6 @@ public class GroundedCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        animator.SetBool("isJumping", !player.IsGrounded());
+        animator.SetBool("isJumping", false);
     }
 }

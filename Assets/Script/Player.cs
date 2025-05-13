@@ -56,7 +56,14 @@ public class Player : MonoBehaviour
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y / 2, rb.linearVelocity.z);
         }
 
-        sprite.flipX = !(rb.linearVelocity.x < 0f);
+        if (rb.linearVelocity.x > 0)
+        {
+            sprite.flipX = true;
+        }
+        else if (rb.linearVelocity.x < 0)
+        {
+            sprite.flipX = false;
+        }
 
         if (wasGrounded != grounded)
         {
