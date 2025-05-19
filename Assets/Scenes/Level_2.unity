@@ -1506,10 +1506,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7798326474026982433, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
-      propertyPath: m_Material
+    - target: {fileID: 5108827976710908895, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: sprite
       value: 
-      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
+      objectReference: {fileID: 617173642}
     - target: {fileID: 8468104799167474691, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -1519,6 +1519,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+--- !u!212 &617173642 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6230133260487360931, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+  m_PrefabInstance: {fileID: 617173641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &617486504
 PrefabInstance:
   m_ObjectHideFlags: 0
