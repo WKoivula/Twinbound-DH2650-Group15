@@ -252,6 +252,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheckDistance: 0.9
+  coyoteTime: 0.1
   animator: {fileID: 8552076780306144590}
   sprite: {fileID: 6230133260487360931}
 --- !u!54 &3705987287591890287
