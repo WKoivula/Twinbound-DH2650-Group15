@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 2f;
     public LayerMask groundLayer;
     public float groundCheckDistance = 1f;
+    public float coyoteTime = 0.1f;
     private float footstepCooldown = 0.4f;
     private float lastFootstepTime = -1f;
 
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public SpriteRenderer sprite;
     private bool wasGrounded = false;
+    private bool inCoyoteTime = false;
 
     private void Start()
     {
@@ -38,6 +41,12 @@ public class Player : MonoBehaviour
         rb.linearVelocity = velocity;
 
         bool grounded = IsGrounded();
+        if (wasGrounded && !grounded && rb.linearVelocity.y <= 0)
+        {
+            inCoyoteTime = true;
+            StartCoroutine(CoyoteTime());
+            
+        }
 
         if (grounded && move != 0f  && Time.time - lastFootstepTime >= footstepCooldown)
         {
@@ -45,9 +54,10 @@ public class Player : MonoBehaviour
             lastFootstepTime = Time.time;
         }
 
-        if (Input.GetKeyDown(jump) && grounded)
+        if (Input.GetKeyDown(jump) && (grounded || inCoyoteTime))
         {
             jumpSound.Play();
+            inCoyoteTime = false;
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
         }
 
@@ -90,6 +100,12 @@ public class Player : MonoBehaviour
     public bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, groundCheckDistance, groundLayer);
+    }
+
+    IEnumerator CoyoteTime()
+    {
+        yield return new WaitForSeconds(coyoteTime);
+        inCoyoteTime = false;
     }
 
     private void OnDrawGizmos()

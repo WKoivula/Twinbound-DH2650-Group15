@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3724138114765974822}
   - component: {fileID: 6230133260487360931}
+  - component: {fileID: 8552076780306144590}
+  - component: {fileID: 3071608878459731684}
+  - component: {fileID: 3999775282471963710}
   m_Layer: 0
   m_Name: twin1_0
   m_TagString: Untagged
@@ -76,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7047530495564016589, guid: 6190e1fa9fcab0844a50d895202b26e7, type: 3}
+  m_Sprite: {fileID: 1107738513091364722, guid: c4284a76eb981604996e258f7c9ce648, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,6 +90,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8552076780306144590
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321394568687183153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5286cad24a4ca1b49aabd5752517384c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &3071608878459731684
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321394568687183153}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.021002984
+  m_Height: 0.12354455
+  m_Direction: 0
+  m_Center: {x: -0.008394742, y: -0.14100301, z: 0}
+--- !u!114 &3999775282471963710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321394568687183153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c5785bc7554c7488933c98ddfe81f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8552076780306144590}
+  player: {fileID: 5108827976710908895}
 --- !u!1 &8468104799167474691
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,9 +251,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckDistance: 0.7
-  animator: {fileID: 0}
-  sprite: {fileID: 0}
+  groundCheckDistance: 0.9
+  animator: {fileID: 8552076780306144590}
+  sprite: {fileID: 6230133260487360931}
 --- !u!54 &3705987287591890287
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -251,10 +313,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.32227004
   m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0.25, z: 0}
+  m_Center: {x: -0.03711641, y: 0.25, z: 0}
 --- !u!82 &8029699319940274441
 AudioSource:
   m_ObjectHideFlags: 0
