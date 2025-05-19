@@ -12,7 +12,7 @@ public class CameraFollowTwoPlayers : MonoBehaviour
         if (playerA == null || playerB == null) return;
 
         Vector3 midpoint = (playerA.position + playerB.position) / 2f;
-        Vector3 desiredPosition = midpoint + offset;
+        Vector3 desiredPosition = new Vector3(0.0f, midpoint.y, 0.0f) + offset;
 
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
