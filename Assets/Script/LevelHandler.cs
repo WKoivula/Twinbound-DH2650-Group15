@@ -8,6 +8,8 @@ public class LevelHandler : MonoBehaviour
 {
     [SerializeField] private Image blackScreen;
     [SerializeField] private float fadeConstant = 2.0f;
+    [SerializeField] private Rigidbody player1;
+    [SerializeField] private Rigidbody player2;
 
     private int playersInTrigger = 0;
     private void Start()
