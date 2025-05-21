@@ -20,12 +20,16 @@ public class Player : MonoBehaviour
     public SpriteRenderer sprite;
     private bool wasGrounded = false;
     private bool inCoyoteTime = false;
+    private SpriteRenderer spriteRenderer;
+    private Material spriteMat;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         jumpSound = GetComponents<AudioSource>()[0];
         footstepSound = GetComponents<AudioSource>()[1];
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteMat = spriteRenderer.material;
     }
 
     public void Movement(KeyCode left, KeyCode right, KeyCode jump)
@@ -68,11 +72,11 @@ public class Player : MonoBehaviour
 
         if (rb.linearVelocity.x > 0)
         {
-            sprite.flipX = true;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else if (rb.linearVelocity.x < 0)
         {
-            sprite.flipX = false;
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
         if (wasGrounded != grounded)
