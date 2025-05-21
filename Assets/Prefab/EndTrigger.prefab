@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 27.81, z: -0.19}
-  m_LocalScale: {x: 2, y: 2.12, z: 1.71}
+  m_LocalScale: {x: 3.8, y: 2.12, z: 1.71}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,4 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 0}
+  levelText: {fileID: 0}
   fadeConstant: 2
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  floatSpeed: 0.4
+  cameraScript: {fileID: 0}

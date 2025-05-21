@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,9 +8,12 @@ using UnityEngine.UI;
 public class LevelHandler : MonoBehaviour
 {
     [SerializeField] private Image blackScreen;
+    [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private float fadeConstant = 2.0f;
     [SerializeField] private Rigidbody player1;
     [SerializeField] private Rigidbody player2;
+    [SerializeField] private float floatSpeed = 0.1f;
+    [SerializeField] private CameraFollowTwoPlayers cameraScript;
 
     private int playersInTrigger = 0;
     private void Start()
@@ -26,6 +30,7 @@ public class LevelHandler : MonoBehaviour
         if (playersInTrigger >= 2)
         {
             StartCoroutine(DoFadeOut(1));
+            cameraScript.shouldFollow = false;
         }
     }
 
@@ -57,10 +62,30 @@ public class LevelHandler : MonoBehaviour
         float alpha = blackScreen.color.a;
         while (blackScreen.color.a < 1)
         {
+            player1.AddForce(new Vector3(0, 1, 0) * 10000f * floatSpeed * Time.deltaTime);
+            player2.AddForce(new Vector3(0, 1, 0) * 10000f * floatSpeed * Time.deltaTime);
             alpha += Time.deltaTime * fadeConstant;
             Color bColor = blackScreen.color;
             Color color = new Color(bColor.r, bColor.g, bColor.b, alpha);
             blackScreen.color = color;
+            yield return null;
+        }
+        alpha = levelText.color.a;
+        while (levelText.color.a < 1)
+        {
+            alpha += Time.deltaTime * fadeConstant;
+            Color bColor = levelText.color;
+            Color color = new Color(bColor.r, bColor.g, bColor.b, alpha);
+            levelText.color = color;
+            yield return null;
+        }
+        yield return new WaitForSeconds(1);
+        while (levelText.color.a > 0)
+        {
+            alpha -= Time.deltaTime * fadeConstant;
+            Color bColor = levelText.color;
+            Color color = new Color(bColor.r, bColor.g, bColor.b, alpha);
+            levelText.color = color;
             yield return null;
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
