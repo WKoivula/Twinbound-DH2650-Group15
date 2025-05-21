@@ -12,7 +12,7 @@ public class EndTriggerZone : MonoBehaviour
     [SerializeField] private PlayerID assignedPlayer;
 
     [Header("LevelHandler 控制器引用")]
-    [SerializeField] private LevelHandler handler;
+    [SerializeField] private LevelHandler1 handler;
 
     private void OnTriggerEnter(Collider other)
     {

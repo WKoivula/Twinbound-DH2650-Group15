@@ -1,9 +1,3 @@
-using UnityEngine;
-
-public class LevelHandler1
-{
-    
-}
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
