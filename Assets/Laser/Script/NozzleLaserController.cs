@@ -1,8 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// 控制一个可以启停的激光喷嘴（继承自 BaseLaserController）
-/// 默认不发射激光，需调用 StartFiring() 来启用激光。
+
 /// </summary>
 public class NozzleLaserController : BaseLaserController
 {
@@ -13,9 +12,6 @@ public class NozzleLaserController : BaseLaserController
     protected override void Start()
     {
         base.Start();
-
-        // ⚠️ 可选：立即启动激光（测试用）
-        // StartFiring(); 
     }
 
     // 每帧更新，只有当激光开启时才进行射线检测与渲染

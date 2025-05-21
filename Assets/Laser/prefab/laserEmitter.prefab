@@ -4988,7 +4988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emitter: {fileID: 1234710183325181325}
-  maxDistance: 30
+  maxDistance: 20
   hitMask:
     serializedVersion: 2
     m_Bits: 4294967295
