@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
             jumpSound.Play();
             inCoyoteTime = false;
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+            animator.SetBool("isJumping", true);
         }
 
         if (Input.GetKeyUp(jump) && rb.linearVelocity.y > 0)
@@ -81,6 +82,7 @@ public class Player : MonoBehaviour
 
         if (wasGrounded != grounded)
         {
+            Debug.Log("Player script");
             animator.SetBool("isJumping", !grounded);
         }
 

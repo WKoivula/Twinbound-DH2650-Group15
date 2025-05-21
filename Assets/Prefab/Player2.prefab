@@ -101,7 +101,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  groundCheckDistance: 0.7
+  groundCheckDistance: 0.55
+  coyoteTime: 0.1
   animator: {fileID: 4749958511678823309}
   sprite: {fileID: 8796294222872253674}
 --- !u!54 &7531453780345587484
@@ -418,7 +419,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 78e7e7bde238d5d49a517e8e022cae4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -439,7 +440,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1252765462237472687, guid: 2ccd2652a6ac9e047a544a67f667ef25, type: 3}
+  m_Sprite: {fileID: 1107738513091364722, guid: c4284a76eb981604996e258f7c9ce648, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

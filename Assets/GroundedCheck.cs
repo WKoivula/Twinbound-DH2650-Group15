@@ -14,9 +14,7 @@ public class GroundedCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (rb.linearVelocity.y < 0)
-        {
-            animator.SetBool("isJumping", false);
-        }
+        Debug.Log("Ground check script");
+        animator.SetBool("isJumping", false);
     }
 }
