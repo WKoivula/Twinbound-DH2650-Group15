@@ -14,7 +14,6 @@ public class GroundedCheck : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Ground check script");
         animator.SetBool("isJumping", false);
     }
 }

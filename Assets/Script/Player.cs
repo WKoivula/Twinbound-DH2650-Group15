@@ -23,6 +23,11 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Material spriteMat;
 
+    private MovingPlatform currentPlatform = null;
+    private bool wasOnMovingPlatform = false;
+    private bool isOnMovingPlatform = false;
+    private bool justJumpedFromMovingPlatform = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,19 +42,33 @@ public class Player : MonoBehaviour
         float move = 0f;
         if (Input.GetKey(left)) move = -1f;
         if (Input.GetKey(right)) move = 1f;
-     
-
 
         Vector3 velocity = rb.linearVelocity;
-        velocity.x = move * moveSpeed;
+        bool grounded = IsGrounded();
+
+        if (justJumpedFromMovingPlatform)
+        {
+            velocity += new Vector3(currentPlatform.Velocity.x, 0, 0);
+            wasOnMovingPlatform = true;
+            justJumpedFromMovingPlatform = false;
+        }
+        else if (wasOnMovingPlatform)          
+        {
+            if (Mathf.Abs(move) > 0f)
+            {
+                velocity.x = Mathf.Lerp(velocity.x, move * moveSpeed, 0.05f);
+            }
+        }
+        else
+        {
+            velocity.x = move * moveSpeed;
+        }
         rb.linearVelocity = velocity;
 
-        bool grounded = IsGrounded();
         if (wasGrounded && !grounded && rb.linearVelocity.y <= 0)
         {
             inCoyoteTime = true;
             StartCoroutine(CoyoteTime());
-            
         }
 
         if (grounded && move != 0f  && Time.time - lastFootstepTime >= footstepCooldown)
@@ -62,7 +81,16 @@ public class Player : MonoBehaviour
         {
             jumpSound.Play();
             inCoyoteTime = false;
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+
+            Vector3 jumpVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+
+            if (isOnMovingPlatform)
+            {
+                
+                justJumpedFromMovingPlatform = true;
+            }
+
+            rb.linearVelocity = jumpVelocity;
             animator.SetBool("isJumping", true);
         }
 
@@ -82,7 +110,6 @@ public class Player : MonoBehaviour
 
         if (wasGrounded != grounded)
         {
-            Debug.Log("Player script");
             animator.SetBool("isJumping", !grounded);
         }
 
@@ -91,10 +118,7 @@ public class Player : MonoBehaviour
 
     protected virtual void Update()
     {
-        //if (rb.linearVelocity.y < 0)
-        //{
-        //    rb.linearVelocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        //}
+   
     }
 
     private void FixedUpdate()
@@ -105,7 +129,23 @@ public class Player : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, groundCheckDistance, groundLayer);
+        RaycastHit hit;
+        isOnMovingPlatform = false;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance, groundLayer))
+        {
+            currentPlatform = hit.collider.GetComponent<MovingPlatform>();
+            if (currentPlatform != null && Mathf.Abs(currentPlatform.Velocity.x)>0.1f)
+            {
+                isOnMovingPlatform = true;
+            }
+
+            if (!wasGrounded)
+            {
+                wasOnMovingPlatform = false;
+            }
+            return true;
+        }
+        return false;
     }
 
     IEnumerator CoyoteTime()

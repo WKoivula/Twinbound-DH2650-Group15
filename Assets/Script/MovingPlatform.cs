@@ -8,9 +8,13 @@ public class MovingPlatform : MonoBehaviour
 
     private Vector3 target;
 
+    private Vector3 lastPosition;
+    public Vector3 Velocity { get; private set; }
+
     void Start()
     {
         target = pointB.position;
+        lastPosition = transform.position;
     }
 
     void Update()
@@ -23,5 +27,9 @@ public class MovingPlatform : MonoBehaviour
         {
             target = (target == pointA.position) ? pointB.position : pointA.position;
         }
+
+        // Calculate velocity
+        Velocity = (transform.position - lastPosition) / Time.deltaTime;
+        lastPosition = transform.position;
     }
 }
