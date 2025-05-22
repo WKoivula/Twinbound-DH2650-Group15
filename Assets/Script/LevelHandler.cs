@@ -44,7 +44,6 @@ public class LevelHandler : MonoBehaviour
 
     IEnumerator DoFadeIn()
     {
-        Debug.Log("Starting");
         float alpha = blackScreen.color.a;
         while (blackScreen.color.a > 0)
         {

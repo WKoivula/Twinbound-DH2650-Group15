@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     private bool isOnMovingPlatform = false;
     private bool justJumpedFromMovingPlatform = false;
 
+    private float move = 0f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
 
     public void Movement(KeyCode left, KeyCode right, KeyCode jump)
     {
-        float move = 0f;
+        move = 0f;
         if (Input.GetKey(left)) move = -1f;
         if (Input.GetKey(right)) move = 1f;
 
@@ -58,6 +60,10 @@ public class Player : MonoBehaviour
             {
                 velocity.x = Mathf.Lerp(velocity.x, move * moveSpeed, 0.05f);
             }
+        }
+        else if (isOnMovingPlatform)
+        {
+            velocity.x = move * moveSpeed + currentPlatform.Velocity.x; // Make player sticks to moving platform
         }
         else
         {
@@ -123,7 +129,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetFloat("xVelocity", Mathf.Abs(move));
         animator.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
@@ -172,7 +178,6 @@ public class Player : MonoBehaviour
     {
         Debug.Log("test");
     }
-
     private void PlayFootStep()
     {
         footstepSound.volume = Random.Range(0.7f, 0.75f);
