@@ -3648,6 +3648,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -49.79, z: 0}
+--- !u!54 &1059826745 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7531453780345587484, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
+  m_PrefabInstance: {fileID: 1363650454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1077804754
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,6 +3991,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5436385617795229593, guid: 6e12a0ff2bb774e40bc2060e57265f34, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 1990103380}
+    - target: {fileID: 5436385617795229593, guid: 6e12a0ff2bb774e40bc2060e57265f34, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1059826745}
+    - target: {fileID: 5436385617795229593, guid: 6e12a0ff2bb774e40bc2060e57265f34, type: 3}
+      propertyPath: cameraScript
+      value: 
+      objectReference: {fileID: 377714049}
     - target: {fileID: 5465083940493473674, guid: 6e12a0ff2bb774e40bc2060e57265f34, type: 3}
       propertyPath: m_Name
       value: EndPrefab
@@ -6402,6 +6419,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
   m_PrefabInstance: {fileID: 1891060753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1990103380 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3705987287591890287, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+  m_PrefabInstance: {fileID: 109326625}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2013040583
 GameObject:

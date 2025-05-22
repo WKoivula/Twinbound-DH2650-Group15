@@ -16,6 +16,20 @@ public class LevelHandler : MonoBehaviour
     [SerializeField] private CameraFollowTwoPlayers cameraScript;
 
     private int playersInTrigger = 0;
+
+    private void Awake()
+    {
+        if (blackScreen == null)
+        {
+            Canvas blackScreenCanvas = FindFirstObjectByType<Canvas>();
+            if (blackScreenCanvas != null)
+            {
+                blackScreen = blackScreenCanvas.GetComponentInChildren<Image>();
+                levelText = blackScreenCanvas.GetComponentInChildren<TextMeshProUGUI>();
+            }
+        }
+    }
+
     private void Start()
     {
         StartCoroutine(DoFadeIn());
