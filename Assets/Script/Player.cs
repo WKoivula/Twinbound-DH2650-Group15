@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 2f;
     public LayerMask groundLayer;
     public float groundCheckDistance = 1f;
-    public Transform groundCheck; // Empty GameObject placed at feet
+    public Transform groundCheck; 
     public float groundRadius = 0.2f;
     public float coyoteTime = 0.1f;
     public float bufferedJumpTime = 0.15f;

@@ -46,19 +46,15 @@ public abstract class BaseLaserController : MonoBehaviour
         Vector3 endPoint = origin + direction * maxDistance;
         PlatformCharge currentHit = null;
 
-        // Perform raycast to detect hits
+
         if (Physics.Raycast(origin, direction, out RaycastHit hit, maxDistance, hitMask))
         {
             endPoint = hit.point;
-
-            // Check if we hit a platform
             PlatformCharge platform = hit.collider.GetComponent<PlatformCharge>();
             if (platform != null)
             {
                 currentHit = platform;
             }
-
-            // ✅ Check if we hit the player
             if (hit.collider.CompareTag("Player"))
             {
                 PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();

@@ -11,12 +11,12 @@ public class LaserHitScan : BaseLaserController
     {
         if (emitter == null) return;
         
-        if (!lr.enabled) lr.enabled = true; // ✅ 手动打开激光
+        if (!lr.enabled) lr.enabled = true; 
         FireLaser(emitter.position, Vector3.down);
 
         Vector3 origin = emitter.position;
         Vector3 direction = Vector3.down;
 
-        FireLaser(origin, direction); // 👈 使用基类激光发射逻辑
+        FireLaser(origin, direction);
     }
 }
