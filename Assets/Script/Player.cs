@@ -82,6 +82,11 @@ public class Player : MonoBehaviour
         }
         rb.linearVelocity = velocity;
 
+        if (!wasGrounded && grounded)
+        {
+            SpawnDustParticle();
+        }
+
         if (wasGrounded && !grounded && rb.linearVelocity.y <= 0)
         {
             inCoyoteTime = true;
@@ -92,8 +97,7 @@ public class Player : MonoBehaviour
         {
             PlayFootStep();
             Debug.Log("Spawning particle");
-            GameObject particles = Instantiate(runningParticles, runningParticlePos.position, runningParticlePos.rotation);
-            particles.transform.rotation = Quaternion.Euler(new Vector3(0f, rb.linearVelocity.x > 0f ? 180f : 0f, 0f));
+            SpawnDustParticle();
             lastFootstepTime = Time.time;
         }
 
@@ -150,6 +154,7 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         jumpSound.Play();
+        SpawnDustParticle();
         inCoyoteTime = false;
 
         Vector3 jumpVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
@@ -164,6 +169,11 @@ public class Player : MonoBehaviour
         animator.SetBool("isJumping", true);
     }
 
+    private void SpawnDustParticle()
+    {
+        GameObject particles = Instantiate(runningParticles, runningParticlePos.position, runningParticlePos.rotation);
+        particles.transform.rotation = Quaternion.Euler(new Vector3(0f, transform.localScale.x == -1f ? 180f : 0f, 0f));
+    }
     
     public bool IsGrounded()
     {
