@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     public float jumpForce = 2f;
     public LayerMask groundLayer;
     public float groundCheckDistance = 1f;
+    public Transform groundCheck; // Empty GameObject placed at feet
+    public float groundRadius = 0.2f;
     public float coyoteTime = 0.1f;
     public float bufferedJumpTime = 0.15f;
     private float footstepCooldown = 0.4f;
@@ -153,24 +155,30 @@ public class Player : MonoBehaviour
         animator.SetBool("isJumping", true);
     }
 
+    
     public bool IsGrounded()
     {
-        RaycastHit hit;
+        Collider[] colliders = Physics.OverlapSphere(groundCheck.position, groundRadius, groundLayer);
         isOnMovingPlatform = false;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance, groundLayer))
+        currentPlatform = null;
+
+        foreach (Collider collider in colliders)
         {
-            currentPlatform = hit.collider.GetComponent<MovingPlatform>();
-            if (currentPlatform != null && Mathf.Abs(currentPlatform.Velocity.x)>0.1f)
+            MovingPlatform platform = collider.GetComponent<MovingPlatform>();
+            if (platform != null && Mathf.Abs(platform.Velocity.x) > 0.1f)
             {
                 isOnMovingPlatform = true;
+                currentPlatform = platform;
             }
 
             if (!wasGrounded)
             {
                 wasOnMovingPlatform = false;
             }
+
             return true;
         }
+
         return false;
     }
 
