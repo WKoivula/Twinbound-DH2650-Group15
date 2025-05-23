@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.XR;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     public float groundCheckDistance = 1f;
     public float coyoteTime = 0.1f;
+    public float bufferedJumpTime = 0.15f;
     private float footstepCooldown = 0.4f;
     private float lastFootstepTime = -1f;
 
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     private bool justJumpedFromMovingPlatform = false;
 
     private float move = 0f;
+    private bool bufferedAJump = false;
 
     private void Start()
     {
@@ -83,26 +86,26 @@ public class Player : MonoBehaviour
             lastFootstepTime = Time.time;
         }
 
-        if (Input.GetKeyDown(jump) && (grounded || inCoyoteTime))
+        bool jumping = false;
+        if (Input.GetKeyDown(jump))
         {
-            jumpSound.Play();
-            inCoyoteTime = false;
-
-            Vector3 jumpVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
-
-            if (isOnMovingPlatform)
-            {
-                
-                justJumpedFromMovingPlatform = true;
-            }
-
-            rb.linearVelocity = jumpVelocity;
-            animator.SetBool("isJumping", true);
+            jumping = true;
+            bufferedAJump = true;
+            StartCoroutine(BufferedJump());
         }
 
-        if (Input.GetKeyUp(jump) && rb.linearVelocity.y > 0)
+        if ((jumping || bufferedAJump) && (grounded || inCoyoteTime))
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y / 2, rb.linearVelocity.z);
+            Jump();
+        }
+
+        if (Input.GetKeyUp(jump))
+        {
+            bufferedAJump = false;
+            if (rb.linearVelocity.y > 0)
+            {
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y / 2, rb.linearVelocity.z);
+            }
         }
 
         if (rb.linearVelocity.x > 0)
@@ -122,15 +125,32 @@ public class Player : MonoBehaviour
         wasGrounded = grounded;
     }
 
-    protected virtual void Update()
-    {
-   
-    }
-
     private void FixedUpdate()
     {
         animator.SetFloat("xVelocity", Mathf.Abs(move));
         animator.SetFloat("yVelocity", rb.linearVelocity.y);
+    }
+
+    protected void Update()
+    {
+
+    }
+
+    private void Jump()
+    {
+        jumpSound.Play();
+        inCoyoteTime = false;
+
+        Vector3 jumpVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+
+        if (isOnMovingPlatform)
+        {
+
+            justJumpedFromMovingPlatform = true;
+        }
+
+        rb.linearVelocity = jumpVelocity;
+        animator.SetBool("isJumping", true);
     }
 
     public bool IsGrounded()
@@ -152,6 +172,12 @@ public class Player : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    IEnumerator BufferedJump()
+    {
+        yield return new WaitForSeconds(bufferedJumpTime);
+        bufferedAJump = false;
     }
 
     IEnumerator CoyoteTime()
