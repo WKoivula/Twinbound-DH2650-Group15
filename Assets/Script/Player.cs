@@ -14,7 +14,11 @@ public class Player : MonoBehaviour
     public float groundRadius = 0.2f;
     public float coyoteTime = 0.1f;
     public float bufferedJumpTime = 0.15f;
-    private float footstepCooldown = 0.4f;
+
+    public GameObject runningParticles;
+    public Transform runningParticlePos;
+
+    public float footstepCooldown = 0.4f;
     private float lastFootstepTime = -1f;
 
     private float fallMultiplier = 2.0f;
@@ -34,6 +38,8 @@ public class Player : MonoBehaviour
 
     private float move = 0f;
     private bool bufferedAJump = false;
+
+    private ParticleSystem runningParticleSystem;
 
     private void Start()
     {
@@ -85,6 +91,9 @@ public class Player : MonoBehaviour
         if (grounded && move != 0f  && Time.time - lastFootstepTime >= footstepCooldown)
         {
             PlayFootStep();
+            Debug.Log("Spawning particle");
+            GameObject particles = Instantiate(runningParticles, runningParticlePos.position, runningParticlePos.rotation);
+            particles.transform.rotation = Quaternion.Euler(new Vector3(0f, rb.linearVelocity.x > 0f ? 180f : 0f, 0f));
             lastFootstepTime = Time.time;
         }
 

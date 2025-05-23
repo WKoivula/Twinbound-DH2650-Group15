@@ -36,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4554992066810467133}
+  - {fileID: 4762242952513498235}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &4417601371826466987
@@ -104,6 +105,10 @@ MonoBehaviour:
   groundCheck: {fileID: 700915019271584427}
   groundRadius: 0.2
   coyoteTime: 0.1
+  bufferedJumpTime: 0.15
+  runningParticles: {fileID: 5385712882067139506, guid: d9ebd50ba6c776848944c43d82edaea2, type: 3}
+  runningParticlePos: {fileID: 4762242952513498235}
+  footstepCooldown: 0.15
   animator: {fileID: 4749958511678823309}
   sprite: {fileID: 8796294222872253674}
 --- !u!54 &7531453780345587484
@@ -350,6 +355,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1357778059929717420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4762242952513498235}
+  m_Layer: 0
+  m_Name: ParticlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4762242952513498235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357778059929717420}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.206, y: -0.492, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7800710976096011299}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7155510648805450698
 GameObject:
   m_ObjectHideFlags: 0

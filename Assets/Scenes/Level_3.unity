@@ -2756,6 +2756,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &904827985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904827986}
+  m_Layer: 0
+  m_Name: ParticlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904827986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904827985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.158, y: -0.477, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 427460886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &912611507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4354,6 +4385,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1235223056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235223057}
+  m_Layer: 0
+  m_Name: ParticlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1235223057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235223056}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.206, y: -0.492, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2052958502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243855332
 GameObject:
   m_ObjectHideFlags: 0
@@ -7238,10 +7300,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
-    - target: {fileID: 6432333511047734312, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
-      propertyPath: m_Material
+    - target: {fileID: 3446586186234966693, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
+      propertyPath: runningParticles
       value: 
-      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
+      objectReference: {fileID: 5385712882067139506, guid: d9ebd50ba6c776848944c43d82edaea2, type: 3}
+    - target: {fileID: 3446586186234966693, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
+      propertyPath: runningParticlePos
+      value: 
+      objectReference: {fileID: 1235223057}
     - target: {fileID: 7800710976096011299, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -7282,17 +7348,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8796294222872253674, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1107738513091364722, guid: c4284a76eb981604996e258f7c9ce648, type: 3}
-    - target: {fileID: 8796294222872253674, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 78e7e7bde238d5d49a517e8e022cae4d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7800710976096011299, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1235223057}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52e1bee32f4839647bad0208c2e515a1, type: 3}
 --- !u!54 &5982514565459675480 stripped
@@ -7405,21 +7466,73 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6230133260487360931, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: ShapeModule.type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 73.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: ShapeModule.m_Rotation.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895230109811834207, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108827976710908895, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: footstepCooldown
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108827976710908895, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: runningParticles
       value: 
-      objectReference: {fileID: 2100000, guid: 78e7e7bde238d5d49a517e8e022cae4d, type: 2}
-    - target: {fileID: 7798326474026982433, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
-      propertyPath: m_Material
+      objectReference: {fileID: 5385712882067139506, guid: d9ebd50ba6c776848944c43d82edaea2, type: 3}
+    - target: {fileID: 5108827976710908895, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: runningParticlePos
       value: 
-      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
+      objectReference: {fileID: 904827986}
+    - target: {fileID: 7500414939616210458, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.149
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500414939616210458, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.443
+      objectReference: {fileID: 0}
     - target: {fileID: 8468104799167474691, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7696627050685925143, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 226801301731578949, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 904827986}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e74b9496eef1e43ab4554eed31a78d, type: 3}
 --- !u!54 &7714805410775760539 stripped
