@@ -1527,6 +1527,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7732793443396875090, guid: fcd49fcc2317ee24085036eb572ffd72, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0e1da5bdc7c5bfa4e869817e345e1499, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4164,7 +4168,7 @@ AudioSource:
   m_GameObject: {fileID: 959582611}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0e1da5bdc7c5bfa4e869817e345e1499, type: 2}
   m_audioClip: {fileID: 8300000, guid: 67792bf5efc13244da603727a4c01b77, type: 3}
   m_Resource: {fileID: 8300000, guid: 67792bf5efc13244da603727a4c01b77, type: 3}
   m_PlayOnAwake: 1
@@ -6972,6 +6976,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7732793443396875090, guid: fcd49fcc2317ee24085036eb572ffd72, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0e1da5bdc7c5bfa4e869817e345e1499, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7127,6 +7135,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7732793443396875090, guid: fcd49fcc2317ee24085036eb572ffd72, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0e1da5bdc7c5bfa4e869817e345e1499, type: 2}
     - target: {fileID: 7910840346643795910, guid: fcd49fcc2317ee24085036eb572ffd72, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -7764,6 +7776,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7732793443396875090, guid: fcd49fcc2317ee24085036eb572ffd72, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0e1da5bdc7c5bfa4e869817e345e1499, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8062,6 +8078,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7732793443396875090, guid: fcd49fcc2317ee24085036eb572ffd72, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0e1da5bdc7c5bfa4e869817e345e1499, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
