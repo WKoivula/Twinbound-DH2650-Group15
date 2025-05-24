@@ -17,24 +17,22 @@ public class PauseMenu : MonoBehaviour
     {
         bool isActive = pauseMenuUI.activeSelf;
         pauseMenuUI.SetActive(!isActive);
-
-        Time.timeScale = isActive ? 1f : 0f; // Pause the game when menu is active
+        Time.timeScale = isActive ? 1f : 0f;
     }
 
     public void LoadMainMenu()
     {
-        Time.timeScale = 1f; // Resume before loading
-        SceneManager.LoadScene("StartScreen"); // Make sure scene name matches
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("StartScreen");
     }
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f; // Resume before restarting
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1f; // Resume before restarting
     }
 
-        public void PauseDirectly()
+    public void PauseDirectly()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
