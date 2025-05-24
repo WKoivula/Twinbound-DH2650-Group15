@@ -14,6 +14,7 @@ public class LevelHandler : MonoBehaviour
     [SerializeField] private Rigidbody player2;
     [SerializeField] private float floatSpeed = 0.1f;
     [SerializeField] private CameraFollowTwoPlayers cameraScript;
+    [SerializeField] private string startScreenName = "StartScreen";
 
     private int playersInTrigger = 0;
 
@@ -101,7 +102,16 @@ public class LevelHandler : MonoBehaviour
             levelText.color = color;
             yield return null;
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentIndex == 5)
+        {
+            SceneManager.LoadScene(startScreenName);
+        }
+        else
+        {
+            SceneManager.LoadScene(currentIndex + scene);
+        }
         yield return null;
     }
 }
