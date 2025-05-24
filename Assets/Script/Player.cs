@@ -57,7 +57,6 @@ public class Player : MonoBehaviour
         if (Input.GetKey(right)) move = 1f;
 
         Vector3 velocity = rb.linearVelocity;
-        bool grounded = IsGrounded();
 
         if (justJumpedFromMovingPlatform)
         {
@@ -82,6 +81,8 @@ public class Player : MonoBehaviour
         }
         rb.linearVelocity = velocity;
 
+        bool grounded = IsGrounded();
+
         if (!wasGrounded && grounded)
         {
             SpawnDustParticle();
@@ -96,7 +97,6 @@ public class Player : MonoBehaviour
         if (grounded && move != 0f  && Time.time - lastFootstepTime >= footstepCooldown)
         {
             PlayFootStep();
-            Debug.Log("Spawning particle");
             SpawnDustParticle();
             lastFootstepTime = Time.time;
         }
@@ -161,7 +161,6 @@ public class Player : MonoBehaviour
 
         if (isOnMovingPlatform)
         {
-
             justJumpedFromMovingPlatform = true;
         }
 
