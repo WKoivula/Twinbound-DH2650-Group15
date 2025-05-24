@@ -25,6 +25,7 @@
 
         void OnTriggerExit(Collider other)
         {
+            buttonSound.Play();
             platformCollider.enabled = false;
             platformRenderer.enabled = false; 
         }

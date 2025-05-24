@@ -14,7 +14,9 @@ public class LevelHandler : MonoBehaviour
     [SerializeField] private Rigidbody player2;
     [SerializeField] private float floatSpeed = 0.1f;
     [SerializeField] private CameraFollowTwoPlayers cameraScript;
-    [SerializeField] private string startScreenName = "StartScreen";
+    [SerializeField] private GameObject audioObject;
+
+    private SoundFade soundFade;
 
     private int playersInTrigger = 0;
 
@@ -29,6 +31,8 @@ public class LevelHandler : MonoBehaviour
                 levelText = blackScreenCanvas.GetComponentInChildren<TextMeshProUGUI>();
             }
         }
+
+        soundFade = audioObject.GetComponent<SoundFade>();
     }
 
     private void Start()
@@ -45,6 +49,7 @@ public class LevelHandler : MonoBehaviour
         if (playersInTrigger >= 2)
         {
             StartCoroutine(DoFadeOut(1));
+            soundFade.FadeOut();
             cameraScript.shouldFollow = false;
         }
     }
@@ -102,16 +107,7 @@ public class LevelHandler : MonoBehaviour
             levelText.color = color;
             yield return null;
         }
-        int currentIndex = SceneManager.GetActiveScene().buildIndex;
-
-        if (currentIndex == 5)
-        {
-            SceneManager.LoadScene(startScreenName);
-        }
-        else
-        {
-            SceneManager.LoadScene(currentIndex + scene);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
         yield return null;
     }
 }
