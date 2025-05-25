@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -427,6 +431,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (9)
@@ -846,6 +854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1169,6 +1181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -1348,6 +1364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left
@@ -1930,6 +1950,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (3)
@@ -2136,6 +2160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2540,6 +2568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (7)
@@ -2758,6 +2790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -3365,6 +3401,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (6)
@@ -3391,6 +3431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -4051,6 +4095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -4578,6 +4626,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (5)
@@ -4689,7 +4741,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241088496}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4884,6 +4936,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (8)
@@ -5068,6 +5124,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (2)
@@ -5185,6 +5245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -5805,6 +5869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -6041,6 +6109,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (11)
@@ -6067,7 +6139,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563140183}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6146,6 +6218,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (10)
@@ -6346,6 +6422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -6705,6 +6785,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 5985922664644719530, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: emitter
       value: 
@@ -6801,7 +6885,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784153136}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7148,6 +7232,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916117332685112244, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 8333687013076871426, guid: b3dc6b7a204c49f4383b7edfc12f1900, type: 3}
       propertyPath: m_Name
       value: EnergyPlatform_left (4)
@@ -7440,6 +7528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -8015,7 +8107,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057331261}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8041,6 +8133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -8110,6 +8206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyPlatform_right (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2342387856721970209, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f02aa07211f4d4e3f89b3f204857390f, type: 2}
     - target: {fileID: 4715805147733172431, guid: a8c98065ad9e5814a9fcdf5d160d0337, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
