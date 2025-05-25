@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class DebugPositionLogger : MonoBehaviour
 {
-    public bool logContinuously = true;  // 是否每帧输出
-    public float logInterval = 1f;       // 间隔多久输出一次（秒）
+    public bool logContinuously = true;  
+    public float logInterval = 1f;      
 
     private float timer = 0f;
 
