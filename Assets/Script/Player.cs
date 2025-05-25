@@ -159,7 +159,7 @@ public class Player : MonoBehaviour
 
         Vector3 jumpVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
 
-        if (isOnMovingPlatform)
+        if (isOnMovingPlatform && !wasOnMovingPlatform)
         {
             justJumpedFromMovingPlatform = true;
         }
