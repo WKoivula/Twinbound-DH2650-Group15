@@ -107,7 +107,7 @@ public class LevelHandler : MonoBehaviour
             levelText.color = color;
             yield return null;
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + scene)%SceneManager.sceneCountInBuildSettings);
         yield return null;
     }
 }
