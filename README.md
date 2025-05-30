@@ -1,6 +1,6 @@
 ![TwinBoundLogo](https://github.com/user-attachments/assets/54022387-1e38-4b2e-905a-6e0dc0c0778a)
 ## A unique 2D Local Co-op platformer made for the course Computer Game Design at KTH
-**Made by William Koivula, Chloé Leyssens, Wei-Jun Lin, Shangwen Wang, Lucas Åkesson**
+**Made by Group 15: William Koivula, Chloé Leyssens, Wei-Jun Lin, Shangwen Wang, Lucas Åkesson**
 
 *This is a Unity project and can be cloned and run in Unity*
 
